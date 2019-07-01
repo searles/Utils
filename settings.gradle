@@ -1,0 +1,11 @@
+rootProject.name = 'Commons'
+include 'Colors'
+findProject(':Colors')?.name = 'colors'
+include 'math'
+include 'colors'
+include 'strings'
+include 'collections'
+include 'colors'
+include 'color'
+include 'util'
+
