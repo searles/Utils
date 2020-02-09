@@ -4,8 +4,16 @@
     <bytecodeTargetLevel>
       <module name="Commons.collections.main" target="1.8" />
       <module name="Commons.collections.test" target="1.8" />
+      <module name="Commons.color.main" target="1.8" />
+      <module name="Commons.color.test" target="1.8" />
       <module name="Commons.colors.main" target="1.8" />
       <module name="Commons.colors.test" target="1.8" />
+      <module name="Commons.math.main" target="1.8" />
+      <module name="Commons.math.test" target="1.8" />
+      <module name="Commons.strings.main" target="1.8" />
+      <module name="Commons.strings.test" target="1.8" />
+      <module name="Commons.util.main" target="1.8" />
+      <module name="Commons.util.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
