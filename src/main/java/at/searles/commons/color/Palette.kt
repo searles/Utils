@@ -34,10 +34,12 @@ class Palette(val width: Int, val height: Int, val offsetX: Float, val offsetY: 
         val iterator = colorPoints.iterator()
 
         while(iterator.hasNext()) {
-            val lab = iterator.next()
+            val entry = iterator.next()
 
-            val weight = getWeight(iterator.getX(), iterator.getY(), x, y)
+            val weight = getWeight(entry.x, entry.y, x, y)
             sumWeights += weight
+
+            val lab = entry.value
 
             alpha += lab.alpha * weight
             l += lab.l * weight
