@@ -34,6 +34,14 @@ class IntIntMap<A>: Iterable<A> {
         map[compose(x, y)] = value
     }
 
+    fun remove(x: Int, y: Int): A? {
+        return map.remove(compose(x, y))
+    }
+
+    fun clear() {
+        map.clear()
+    }
+
     class Iter<A> internal constructor(parent: IntIntMap<A>) : Iterator<A> {
         private val iterator: Iterator<Map.Entry<Long, A>>
         private var last: Map.Entry<Long, A>? = null
