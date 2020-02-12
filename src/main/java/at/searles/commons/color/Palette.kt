@@ -36,6 +36,10 @@ class Palette(val width: Int, val height: Int, val offsetX: Float, val offsetY: 
         while(iterator.hasNext()) {
             val entry = iterator.next()
 
+            if(entry.x >= width || entry.y >= height) {
+                continue
+            }
+
             val weight = getWeight(entry.x, entry.y, x, y)
             sumWeights += weight
 
