@@ -16,6 +16,8 @@
  */
 package at.searles.commons.math;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Cplx {
 
     public static final Cplx ZERO = new Cplx(0, 0);
@@ -89,12 +91,16 @@ public class Cplx {
         return dr * dr + di * di;
     }
 
-    public double arc() {
+    public double arg() {
         return Math.atan2(im, re);
     }
 
     public double rad() {
-        return /*rad == -1 ? rad =*/ Math.hypot(re, im); //: rad;
+        return Math.hypot(re, im);
+    }
+
+    public double abs() {
+        return rad();
     }
 
     // Now come the operations
