@@ -343,6 +343,30 @@ public class Cplx {
         return this;
     }
 
+    public Cplx asin(double re, double im) {
+        // -i * ln(iz + sqrt(1-z^2))
+        this.sqr(re, im); // z^2
+        this.sub(1, 0, this.re, this.im); // 1 - z^2
+        this.sqrt(this);
+        this.add(-im, re, this.re, this.im);
+        this.log(this);
+        this.set(this.im, -this.re); // * -i
+
+        return this;
+    }
+
+    public Cplx acos(double re, double im) {
+        // -i * ln(z + sqrt(z^2 - 1))
+        this.sqr(re, im); // z^2
+        this.sub(this.re, this.im, 1, 0); // z^2 - 1
+        this.sqrt(this);
+        this.add(re, im, this.re, this.im);
+        this.log(this);
+        this.set(this.im, -this.re); // * -i
+
+        return this;
+    }
+
     public Cplx sinh(double re, double im) {
         this.exp(re, im);
         this.subrec(this.re, this.im);
@@ -370,7 +394,29 @@ public class Cplx {
     public Cplx atanh(double re, double im) {
         this.div(1 + re, im, 1 - re, -im);
         this.log(this.re, this.im);
+        this.log(this);
         this.set(this.re / 2., this.im / 2.);
+
+        return this;
+    }
+
+    public Cplx asinh(double re, double im) {
+        // ln(z + sqrt(z^2 + 1))
+        this.sqr(re, im); // z^2
+        this.add(1, 0, this.re, this.im); // z^2 + 1
+        this.sqrt(this);
+        this.add(re, im, this.re, this.im);
+        this.log(this);
+
+        return this;
+    }
+
+    public Cplx acosh(double re, double im) {
+        // ln(z + sqrt(z^2 - 1))
+        this.sqr(re, im); // z^2
+        this.sub(this.re, this.im, 1, 0); // z^2 - 1
+        this.sqrt(this);
+        this.add(re, im, this.re, this.im);
 
         return this;
     }
