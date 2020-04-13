@@ -75,10 +75,6 @@ public class Cplx {
         return set(d, 0.);
     }
 
-    /*public Cplx set(Cplx that) {
-        return set(that.re, that.im);
-    }*/
-
     // Some values of interest
     public double rad2() {
         return re * re + im * im;
@@ -131,16 +127,6 @@ public class Cplx {
         this.im = (-re0 * im1 + im0 * re1) / abs;
 
         return this;
-    }
-
-    public Cplx mod(double re0, double im0, double re1, double im1) {
-        // FIXME!!!
-        double abs = re1 * re1 + im1 * im1;
-
-        this.re = (re0 * re1 + im0 * im1) / abs;
-        this.im = (-re0 * im1 + im0 * re1) / abs;
-
-		throw new UnsupportedOperationException();
     }
 
     public Cplx powInt(Cplx z, int exp) {
@@ -459,10 +445,6 @@ public class Cplx {
         return this.pow(arg0.re, arg0.im, arg1.re, arg1.im);
     }
 
-    public Cplx mod(Cplx arg0, Cplx arg1) {
-        return this.mod(arg0.re, arg0.im, arg1.re, arg1.im);
-    }
-
     public Cplx min(Cplx arg0, Cplx arg1) {
         return this.min(arg0.re, arg0.im, arg1.re, arg1.im);
     }
@@ -515,6 +497,14 @@ public class Cplx {
         return this.tan(arg.re, arg.im);
     }
 
+    public Cplx asin(Cplx arg) {
+        return this.asin(arg.re, arg.im);
+    }
+
+    public Cplx acos(Cplx arg) {
+        return this.acos(arg.re, arg.im);
+    }
+
     public Cplx atan(Cplx arg) {
         return this.atan(arg.re, arg.im);
     }
@@ -529,6 +519,14 @@ public class Cplx {
 
     public Cplx tanh(Cplx arg) {
         return this.tanh(arg.re, arg.im);
+    }
+
+    public Cplx asinh(Cplx arg) {
+        return this.asinh(arg.re, arg.im);
+    }
+
+    public Cplx acosh(Cplx arg) {
+        return this.acosh(arg.re, arg.im);
     }
 
     public Cplx atanh(Cplx arg) {
